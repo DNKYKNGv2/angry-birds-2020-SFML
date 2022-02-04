@@ -1,0 +1,28 @@
+Bird Drag Mechanic:
+
+if left mouse button is held down and mouse intersects bird then:
+	set bird's position to equal mouse position
+
+if left mouse button is let go then:
+	calculate distance between initial location and current location of bird,
+	create vector from the result
+	find magnitude
+	update bird's direction variable
+	bird counter -= 1
+	set new bird's visibility - true
+
+	if bird collides with edge of screen (left, right, bottom) then:
+	set that bird's visibility to false
+	zero out bird's movement
+
+	if bird collides with pig then:
+	set that bird's visibility to false
+	set that pig's visibility to false
+	pig counter -= 1
+	zero out bird's movement
+
+	if pig counter = 0 and bird counter > 0 then
+	show Game_Win screen
+	if pig counter > 0 and bird counter <= 0 then
+	show Game_Lose screen
+	repeat
